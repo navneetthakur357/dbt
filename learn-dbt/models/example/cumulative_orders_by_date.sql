@@ -1,0 +1,5 @@
+{{config(materialized='table')}}
+
+select DISTINCT O_ORDERDATE, sum(O_TOTALPRICE)  OVER( ORDER BY O_ORDERDATE) as "Total_Sum"
+FROM
+"SNOWFLAKE_SAMPLE_DATA"."TPCH_SF1"."ORDERS" ORDER BY 1
