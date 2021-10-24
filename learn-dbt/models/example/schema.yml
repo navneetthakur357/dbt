@@ -18,7 +18,6 @@ models:
         description: "The primary key for this table"
         tests:
           - unique
-          - not_null
           - relationships:
               to: ref('my_first_dbt_model')
               field: id
@@ -29,7 +28,6 @@ models:
       - name: C_CUSTKEY
         description: "The primary key for this table"
         tests:
-          - unique
           - not_null
 
   - name: cumulative_orders_by_date
